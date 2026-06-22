@@ -1,8 +1,7 @@
 name: Execute-Tests
 on: 
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [iniciar-testes-automatizados]
 jobs: 
   BuildTest:
     runs-on: ubuntu-latest
