@@ -37,6 +37,6 @@ test.describe('Recuperar conta', () => {
     await sInput.fill('igorfelix.sup');
     await sToken.click();
     await expect(page.getByText('Usuário não encontrado.')).toBeVisible();
-    await expect(page.getByRole('button', { name: 'OK'})).toBeEnabled();
+    await expect(page.getByRole('button', { name: 'OK'})).toBeDisabled();
   });
 });

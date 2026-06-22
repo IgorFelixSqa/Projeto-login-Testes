@@ -1,1 +1,26 @@
 name: Execute-Tests
+on: 
+  push:
+    branches:
+      - main
+jobs: 
+  BuildTest:
+    runs-on: ubuntu latest
+    steps:
+      # Faz Checkout do projeto #
+      - name: Checkout Code
+        uses: actions/checkout@v7.0.0
+      
+      # Instala o Node #
+      - name: Install Node
+        uses: actions/setup-node@v6
+        with: 
+          node-version: '24'
+      
+      # instala Playwright e roda os testes #
+      - name: Install dependencies
+        run: npm ci
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run tests
+        run: npx playwright test
