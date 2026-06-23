@@ -1,7 +1,7 @@
 name: Script de Testes
 on:
   repository-dispatch:
-    types: [iniciar-testes-automatizados]
+    types: [IntegraRepositorios]
 jobs:
   BuildAndTest:
     runs-on: ubuntu-latest
