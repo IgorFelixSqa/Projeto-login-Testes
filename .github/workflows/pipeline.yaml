@@ -1,6 +1,6 @@
 name: Script de Testes
 on:
-  repository-dispatch:
+  repository_dispatch:
     types: [IntegraRepositorios]
 jobs:
   BuildAndTest:
